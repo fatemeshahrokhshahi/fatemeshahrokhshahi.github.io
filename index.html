@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatemeh Shahrokhshahi</title>
+    <style>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #2c3e50;
+            background-color: #ffffff;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #bdc3c7;
+        }
+        
+        h1 {
+            font-size: 2.2em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #1a252f;
+        }
+        
+        .affiliation {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .contact-links {
+            margin-top: 20px;
+        }
+        
+        .contact-links a {
+            margin: 0 15px;
+            color: #2c5282;
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+        
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        
+        section {
+            margin-bottom: 45px;
+        }
+        
+        h2 {
+            font-size: 1.4em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #1a252f;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .research-interests {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+        }
+        
+        .publication {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 3px solid #2c5282;
+        }
+        
+        .publication h3 {
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #1a252f;
+        }
+        
+        .publication .venue {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .publication .links a {
+            color: #2c5282;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+        
+        .publication .links a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #bdc3c7;
+            text-align: center;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .contact-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fatemeh Shahrokhshahi</h1>
+        <p class="affiliation">
+            M.Sc. Student, Computer Engineering<br>
+            Istanbul Aydin University
+        </p>
+        <div class="contact-links">
+            <a href="mailto:fatemehshahrokhshahi@stu.aydin.edu.tr">Email</a>
+            <a href="https://github.com/fatemeshahrokhshahi" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/fateme-shahrokhshahi" target="_blank">LinkedIn</a>
+            <a href="Fatemeh_Shahrokhshahi_CV.pdf" target="_blank">CV</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>About</h2>
+        <p>
+            I am a Master's student in Computer Engineering at Istanbul Aydin University, graduating July 2026 with a 4.0 GPA. 
+            My research focuses on improving logical reasoning capabilities in large language models, with the goal of building more 
+            trustworthy and reliable AI systems.
+        </p>
+        <p>
+            I am particularly interested in overcoming the fundamental challenges that prevent current AI systems from reasoning 
+            correctly about conditionals, modals, and logical inference patterns. My work aims to bridge the gap between surface-level 
+            fluency and genuine logical understanding in language models.
+        </p>
+        <p class="research-interests">
+            <strong>Research Interests:</strong> Large Language Models, Logical Reasoning, Modal Logic, Trustworthy AI, 
+            Natural Language Processing, Prompt Engineering
+        </p>
+    </section>
+
+    <section>
+        <h2>Publications</h2>
+        <div class="publication">
+            <h3>LogiCue: Targeted Prompting for Improved Modal and Conditional Reasoning in Large Language Models</h3>
+            <p class="venue">
+                ACLing 2025: 7th International Conference on AI in Computational Linguistics<br>
+                Procedia Computer Science, Elsevier
+            </p>
+            <p>
+                F. Shahrokhshahi, F. Mohammadi, F. Sonmez
+            </p>
+            <p>
+                Developed pattern-specific prompting methodology achieving 82.8% accuracy on challenging inference patterns, 
+                representing a 50.9 percentage point improvement over baseline approaches across nine state-of-the-art models 
+                including GPT-5, Claude Sonnet 4.5, and DeepSeek Reasoner.
+            </p>
+            <div class="links">
+                <a href="https://github.com/fatemeshahrokhshahi/LogiCue" target="_blank">[Code]</a>
+                <a href="#" target="_blank">[Paper]</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Research Experience</h2>
+        <p><strong>Intelligent Academic Retrieval System</strong> (Nov 2024 - Feb 2025)</p>
+        <ul>
+            <li>Designed NLP pipeline integrating LangChain and vector databases for semantic search over academic literature</li>
+            <li>Enhanced information retrieval through context-aware embeddings, outperforming traditional keyword matching</li>
+        </ul>
+        
+        <p><strong>Balanced K-Means for Domain Discovery in Language Models</strong> (Feb 2025 - May 2025)</p>
+        <ul>
+            <li>Developed balanced clustering algorithm preventing general domain dominance in language model analysis</li>
+            <li>Implemented domain transition framework tracking text shifts between specialized knowledge areas</li>
+        </ul>
+        
+        <p><strong>Earthquake Prediction Using Machine Learning</strong> (Under Preparation)</p>
+        <ul>
+            <li>Designed ensemble framework combining Random Forest, Physics-Informed Neural Networks, and Graph Neural Networks</li>
+            <li>Achieved 76.9% accuracy in earthquake occurrence prediction using AFAD government data</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <p>
+            <strong>M.Sc. in Computer Engineering</strong> (Sep 2024 - Jul 2026)<br>
+            Istanbul Aydin University, Turkey<br>
+            GPA: 4.0/4.0
+        </p>
+        <p>
+            <strong>B.Sc. in Robotic Engineering</strong> (Sep 2015 - Feb 2022)<br>
+            Shahrood University of Technology, Iran
+        </p>
+    </section>
+
+    <footer>
+        <p>Last updated: December 2024</p>
+    </footer>
+</body>
+</html>
