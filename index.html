@@ -14,46 +14,65 @@
             color: #2c3e50;
             background-color: #ffffff;
         }
-        
+
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 36px;
             margin-bottom: 50px;
             padding-bottom: 30px;
             border-bottom: 1px solid #bdc3c7;
         }
-        
+
+        .header-photo {
+            flex-shrink: 0;
+        }
+
+        .header-photo img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #bdc3c7;
+            display: block;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
         h1 {
             font-size: 2.2em;
             font-weight: 400;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             color: #1a252f;
         }
-        
+
         .affiliation {
-            font-size: 1.1em;
+            font-size: 1.05em;
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 0;
         }
-        
+
         .contact-links {
-            margin-top: 20px;
+            margin-top: 16px;
         }
-        
+
         .contact-links a {
-            margin: 0 15px;
+            margin-right: 16px;
             color: #2c5282;
             text-decoration: none;
             font-size: 0.95em;
         }
-        
+
         .contact-links a:hover {
             text-decoration: underline;
         }
-        
+
         section {
             margin-bottom: 45px;
         }
-        
+
         h2 {
             font-size: 1.4em;
             font-weight: 500;
@@ -62,57 +81,99 @@
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 8px;
         }
-        
+
         p {
             margin-bottom: 15px;
             text-align: justify;
         }
-        
+
         .research-interests {
             font-style: italic;
             color: #555;
             margin-top: 10px;
         }
-        
+
+        /* Publications */
         .publication {
             background-color: #f8f9fa;
             padding: 20px;
             margin: 20px 0;
             border-left: 3px solid #2c5282;
         }
-        
+
         .publication h3 {
             font-size: 1.1em;
             font-weight: 500;
             margin-bottom: 8px;
             color: #1a252f;
         }
-        
+
         .publication .venue {
             font-style: italic;
             color: #555;
             margin-bottom: 8px;
         }
-        
+
+        .publication .links {
+            margin-top: 10px;
+        }
+
         .publication .links a {
             color: #2c5282;
             text-decoration: none;
             margin-right: 15px;
             font-size: 0.9em;
         }
-        
+
         .publication .links a:hover {
             text-decoration: underline;
         }
-        
+
+        /* Certifications */
+        .certification {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 3px solid #2c5282;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .certification-info h3 {
+            font-size: 1.05em;
+            font-weight: 500;
+            margin-bottom: 4px;
+            color: #1a252f;
+        }
+
+        .certification-info .cert-meta {
+            font-style: italic;
+            color: #555;
+            font-size: 0.92em;
+            margin-bottom: 0;
+        }
+
+        .certification-link a {
+            color: #2c5282;
+            text-decoration: none;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .certification-link a:hover {
+            text-decoration: underline;
+        }
+
         ul {
             padding-left: 20px;
         }
-        
+
         li {
             margin-bottom: 8px;
         }
-        
+
         footer {
             margin-top: 60px;
             padding-top: 20px;
@@ -121,77 +182,110 @@
             font-size: 0.9em;
             color: #7f8c8d;
         }
-        
+
         @media (max-width: 600px) {
-            body {
-                padding: 20px 15px;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-            }
-            
-            .contact-links a {
-                display: block;
-                margin: 10px 0;
-            }
+            body { padding: 20px 15px; }
+            header { flex-direction: column; align-items: flex-start; gap: 20px; }
+            h1 { font-size: 1.8em; }
+            .contact-links a { display: inline-block; margin: 4px 12px 4px 0; }
+            .certification { flex-direction: column; align-items: flex-start; gap: 8px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Fatemeh Shahrokhshahi</h1>
-        <p class="affiliation">
-            M.Sc. Student, Computer Engineering<br>
-            Istanbul Aydin University
-        </p>
-        <div class="contact-links">
-            <a href="mailto:fatemehshahrokhshahi@stu.aydin.edu.tr">Email</a>
-            <a href="https://github.com/fatemeshahrokhshahi" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/fatemeh-shahrokhshahi-180435219/" target="_blank">LinkedIn</a>
-            <a href="Shahrokhshahi_CV_2026_June.pdf" target="_blank">CV</a>
-            <a href="Research Statement FShahrokhshahi.pdf" target="_blank">Research Statement</a>
-            <a href="Transcript_merged.pdf" target="_blank">Transcript</a>
+        <div class="header-photo">
+            <!-- Upload your photo to GitHub as "profile.jpg" and it will appear here -->
+            <img src="profile.jpg" alt="Fatemeh Shahrokhshahi">
+        </div>
+        <div class="header-text">
+            <h1>Fatemeh Shahrokhshahi</h1>
+            <p class="affiliation">
+                M.Sc. Student, Computer Engineering<br>
+                Istanbul Aydin University
+            </p>
+            <div class="contact-links">
+                <a href="mailto:fatemehshahrokhshahi@stu.aydin.edu.tr">Email</a>
+                <a href="https://github.com/fatemeshahrokhshahi" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/fatemeh-shahrokhshahi-180435219/" target="_blank">LinkedIn</a>
+                <a href="Shahrokhshahi_CV_2026_July.pdf" target="_blank">CV</a>
+                <a href="Research Statement FShahrokhshahi.pdf" target="_blank">Research Statement</a>
+                <a href="Transcript_merged.pdf" target="_blank">Transcript</a>
+            </div>
         </div>
     </header>
 
     <section>
         <h2>About</h2>
         <p>
-            I am a Master's student in Computer Engineering at Istanbul Aydin University, graduating July 2026 with a 4.0 GPA. 
-            My research focuses on improving logical reasoning capabilities in large language models, with the goal of building more 
-            trustworthy and reliable AI systems.
+            I am a researcher working on the reliability and trustworthiness of large language models. My work is driven by
+            a direct concern: LLMs are now accessible to everyone, yet their reasoning failures remain poorly understood and
+            difficult to anticipate. I believe technology should genuinely help people - and that is only possible when the
+            systems they rely on are transparent about what they can and cannot do.
         </p>
         <p>
-            I am particularly interested in overcoming the fundamental challenges that prevent current AI systems from reasoning 
-            correctly about conditionals, modals, and logical inference patterns. My work aims to bridge the gap between surface-level 
-            fluency and genuine logical understanding in language models.
+            My research focuses on understanding why LLMs fail on logical inference, predicting when they will fail, and
+            designing interventions that make their behaviour more consistent and interpretable. Reliable, transparent AI
+            is not a secondary concern - it is the foundation everything else has to be built on.
         </p>
         <p class="research-interests">
-            <strong>Research Interests:</strong> Large Language Models, Logical Reasoning, Modal Logic, Trustworthy AI, 
-            Natural Language Processing, Prompt Engineering
+            <strong>Research Interests:</strong> Large Language Models, Logical Reasoning, Modal Logic, Failure Prediction,
+            Trustworthy AI, Natural Language Processing, Prompt Engineering
         </p>
     </section>
 
     <section>
         <h2>Publications</h2>
+
+        <div class="publication">
+            <h3>Can We Predict LLM Reasoning Failures? Structural Predictability of Modal and Conditional Inference Errors</h3>
+            <p class="venue">
+                KI 2026: 49th German Conference on Artificial Intelligence, Bremen, Germany<br>
+                Lecture Notes in Computer Science (LNAI, vol. 16830), Springer, Cham, pp. 317-323
+            </p>
+            <p>F. Shahrokhshahi, F. Mohammadi</p>
+            <p>
+                Investigated whether LLM failures on seven modal and conditional inference patterns are predictable from
+                the structural properties of reasoning problems alone, without access to model outputs. An external classifier
+                trained on 3,776 instances across nine models and three prompting strategies achieves AUC-ROC values of
+                0.69-0.93, with "must"-operator patterns proving most predictable. Results show that targeted prompting
+                (LogiCue) and output-side reliability mechanisms serve complementary roles in LLM reasoning pipelines.
+            </p>
+            <div class="links">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-032-32335-4_29" target="_blank">[Paper]</a>
+                <a href="https://github.com/fatemeshahrokhshahi/LLM-Failure-Prediction" target="_blank">[Code]</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Towards Logical Reasoning by Design: Encoding Inference Rules in MeMo's Associative Memory</h3>
+            <p class="venue">
+                MeMo Workshop on Mechanistic Interpretability &amp; Neuro-symbolic Approaches<br>
+                University of Rome Tor Vergata &nbsp;·&nbsp; Accepted and Presented June 2026 &nbsp;·&nbsp
+            </p>
+            <p>F. Shahrokhshahi</p>
+            <p>
+                Explores explicit inference rule storage within MeMo's Correlation Matrix Memory as a mechanism for
+                injecting structured logical reasoning capabilities into associative memory architectures.
+            </p>
+            <!-- Add [Paper] and [Code] links here once published -->
+        </div>
+
         <div class="publication">
             <h3>LogiCue: Targeted Prompting for Improved Modal and Conditional Reasoning in Large Language Models</h3>
             <p class="venue">
                 ACLing 2025: 7th International Conference on AI in Computational Linguistics<br>
-                Procedia Computer Science, Elsevier
+                Procedia Computer Science, vol. 275, pp. 484-492, Elsevier
             </p>
+            <p>F. Shahrokhshahi, F. Mohammadi, F. Sonmez</p>
             <p>
-                F. Shahrokhshahi, F. Mohammadi, F. Sonmez
-            </p>
-            <p>
-                Developed pattern-specific prompting methodology achieving 82.8% accuracy on challenging inference patterns, 
-                representing a 50.9 percentage point improvement over baseline approaches across nine state-of-the-art models 
+                Developed a pattern-specific prompting methodology achieving 82.8% accuracy on challenging inference patterns,
+                representing a 50.9 percentage point improvement over baseline approaches across nine state-of-the-art models
                 including GPT-5, Claude Sonnet 4.5, and DeepSeek Reasoner.
             </p>
             <div class="links">
-                <a href="https://github.com/fatemeshahrokhshahi/LogiCue" target="_blank">[Code]</a>
                 <a href="https://www.sciencedirect.com/science/article/pii/S1877050926000578" target="_blank">[Paper]</a>
+                <a href="https://github.com/fatemeshahrokhshahi/LogiCue" target="_blank">[Code]</a>
             </div>
         </div>
     </section>
@@ -203,13 +297,13 @@
             <li>Designed NLP pipeline integrating LangChain and vector databases for semantic search over academic literature</li>
             <li>Enhanced information retrieval through context-aware embeddings, outperforming traditional keyword matching</li>
         </ul>
-        
+
         <p><strong>Balanced K-Means for Domain Discovery in Language Models</strong> (Feb 2025 - May 2025)</p>
         <ul>
             <li>Developed balanced clustering algorithm preventing general domain dominance in language model analysis</li>
             <li>Implemented domain transition framework tracking text shifts between specialized knowledge areas</li>
         </ul>
-        
+
         <p><strong>Earthquake Prediction Using Machine Learning</strong> (Under Preparation)</p>
         <ul>
             <li>Designed ensemble framework combining Random Forest, Physics-Informed Neural Networks, and Graph Neural Networks</li>
@@ -220,7 +314,7 @@
     <section>
         <h2>Education</h2>
         <p>
-            <strong>M.Sc. in Computer Engineering</strong> (Sep 2024 - Jul 2026)<br>
+            <strong>M.Sc. in Computer Engineering</strong> (Sep 2024 - present)<br>
             Istanbul Aydin University, Turkey<br>
             GPA: 4.0/4.0
         </p>
@@ -230,8 +324,63 @@
         </p>
     </section>
 
+    <section>
+        <h2>Certifications</h2>
+
+        <div class="certification">
+            <div class="certification-info">
+                <h3>French Language - A2 Level</h3>
+                <p class="cert-meta">Istanbul Aydin University, Département des Langues Étrangères &nbsp;·&nbsp; 2025</p>
+            </div>
+            <div class="certification-link">
+                <a href="French_A2_Certificate.pdf" target="_blank">[View Certificate]</a>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-info">
+                <h3>IELTS Academic</h3>
+                <p class="cert-meta">Overall: 7.0 &nbsp;(L:8, R:7, S:7, W:6) &nbsp;·&nbsp; Oct 2022 &nbsp;·&nbsp; TRF 22IR007446SHAF010A</p>
+            </div>
+            <div class="certification-link">
+                <a href="IELTS_Certificate.pdf" target="_blank">[View Certificate]</a>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-info">
+                <h3>AI Fundamentals Certification</h3>
+                <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 10, 2024 &nbsp;·&nbsp; No: AIF0029382573652</p>
+            </div>
+            <div class="certification-link">
+                <a href="DataCamp_AI_Fundamentals.pdf" target="_blank">[View Certificate]</a>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-info">
+                <h3>Introduction to SQL</h3>
+                <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 9, 2024 &nbsp;·&nbsp; No: 36,777,634</p>
+            </div>
+            <div class="certification-link">
+                <a href="DataCamp_SQL.pdf" target="_blank">[View Certificate]</a>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-info">
+                <h3>Presenter Certificate - ACLing 2025</h3>
+                <p class="cert-meta">AI in Computational Linguistics, British University in Dubai &nbsp;·&nbsp; Dec 7, 2025 &nbsp;·&nbsp; No: ACLing/2025/87</p>
+            </div>
+            <div class="certification-link">
+                <a href="ACLing_2025_Certificate.pdf" target="_blank">[View Certificate]</a>
+            </div>
+        </div>
+
+    </section>
+
     <footer>
-        <p>Last updated: December 2024</p>
+        <p>Last updated: July 2026</p>
     </footer>
 </body>
 </html>
