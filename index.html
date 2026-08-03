@@ -129,16 +129,22 @@
             text-decoration: underline;
         }
 
+
         /* Certifications */
         .certification {
             background-color: #f8f9fa;
-            padding: 20px;
             margin: 20px 0;
             border-left: 3px solid #2c5282;
+            overflow: hidden;
+        }
+
+        .certification-header {
+            padding: 18px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 20px;
+            cursor: default;
         }
 
         .certification-info h3 {
@@ -155,15 +161,24 @@
             margin-bottom: 0;
         }
 
-        .certification-link a {
-            color: #2c5282;
-            text-decoration: none;
-            font-size: 0.9em;
-            white-space: nowrap;
+        .cert-preview {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.3s ease;
+            padding: 0 20px;
         }
 
-        .certification-link a:hover {
-            text-decoration: underline;
+        .certification:hover .cert-preview {
+            max-height: 620px;
+            padding: 0 20px 20px;
+        }
+
+        .cert-preview iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            display: block;
         }
 
         ul {
@@ -191,67 +206,6 @@
             .certification { flex-direction: column; align-items: flex-start; gap: 8px; }
         }
 
-        /* Lightbox */
-        .cert-trigger {
-            cursor: pointer;
-            color: #2c5282;
-            text-decoration: none;
-            font-size: 0.9em;
-            white-space: nowrap;
-            background: none;
-            border: none;
-            font-family: inherit;
-            padding: 0;
-        }
-
-        .cert-trigger:hover { text-decoration: underline; }
-
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.75);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .lightbox-overlay.active { display: flex; }
-
-        .lightbox-box {
-            background: #fff;
-            max-width: 860px;
-            width: 100%;
-            max-height: 90vh;
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 10px;
-            right: 14px;
-            font-size: 1.6em;
-            cursor: pointer;
-            color: #555;
-            background: none;
-            border: none;
-            line-height: 1;
-            z-index: 10;
-        }
-
-        .lightbox-close:hover { color: #1a252f; }
-
-        .lightbox-box iframe {
-            width: 100%;
-            flex: 1;
-            border: none;
-            min-height: 75vh;
-        }
     </style>
 </head>
 <body>
@@ -386,90 +340,76 @@
         </p>
     </section>
 
+
     <section>
         <h2>Certifications</h2>
 
         <div class="certification">
-            <div class="certification-info">
-                <h3>French Language - A2 Level</h3>
-                <p class="cert-meta">Istanbul Aydin University, Département des Langues Étrangères &nbsp;·&nbsp; 2025</p>
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>French Language - A2 Level</h3>
+                    <p class="cert-meta">Istanbul Aydin University, Département des Langues Étrangères &nbsp;·&nbsp; 2025</p>
+                </div>
             </div>
-            <div class="certification-link">
-                <button class="cert-trigger" onclick="openCert('French_A2_Certificate.pdf')">[View Certificate]</button>
-            </div>
-        </div>
-
-        <div class="certification">
-            <div class="certification-info">
-                <h3>IELTS Academic</h3>
-                <p class="cert-meta">Overall: 7.0 &nbsp;(L:8, R:7, S:7, W:6) &nbsp;·&nbsp; Oct 2022 &nbsp;·&nbsp; TRF 22IR007446SHAF010A</p>
-            </div>
-            <div class="certification-link">
-                <button class="cert-trigger" onclick="openCert('IELTS_Certificate.pdf')">[View Certificate]</button>
+            <div class="cert-preview">
+                <iframe src="French_A2_Certificate.pdf" loading="lazy"></iframe>
             </div>
         </div>
 
         <div class="certification">
-            <div class="certification-info">
-                <h3>AI Fundamentals Certification</h3>
-                <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 10, 2024 &nbsp;·&nbsp; No: AIF0029382573652</p>
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>IELTS Academic</h3>
+                    <p class="cert-meta">Overall: 7.0 &nbsp;(L:8, R:7, S:7, W:6) &nbsp;·&nbsp; Oct 2022 &nbsp;·&nbsp; TRF 22IR007446SHAF010A</p>
+                </div>
             </div>
-            <div class="certification-link">
-                <button class="cert-trigger" onclick="openCert('DataCamp_AI_Fundamentals.pdf')">[View Certificate]</button>
-            </div>
-        </div>
-
-        <div class="certification">
-            <div class="certification-info">
-                <h3>Introduction to SQL</h3>
-                <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 9, 2024 &nbsp;·&nbsp; No: 36,777,634</p>
-            </div>
-            <div class="certification-link">
-                <button class="cert-trigger" onclick="openCert('DataCamp_SQL.pdf')">[View Certificate]</button>
+            <div class="cert-preview">
+                <iframe src="IELTS_Certificate.pdf" loading="lazy"></iframe>
             </div>
         </div>
 
         <div class="certification">
-            <div class="certification-info">
-                <h3>Presenter Certificate - ACLing 2025</h3>
-                <p class="cert-meta">AI in Computational Linguistics, British University in Dubai &nbsp;·&nbsp; Dec 7, 2025 &nbsp;·&nbsp; No: ACLing/2025/87</p>
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>AI Fundamentals Certification</h3>
+                    <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 10, 2024 &nbsp;·&nbsp; No: AIF0029382573652</p>
+                </div>
             </div>
-            <div class="certification-link">
-                <button class="cert-trigger" onclick="openCert('ACLing_2025_Certificate.pdf')">[View Certificate]</button>
+            <div class="cert-preview">
+                <iframe src="DataCamp_AI_Fundamentals.pdf" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>Introduction to SQL</h3>
+                    <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 9, 2024 &nbsp;·&nbsp; No: 36,777,634</p>
+                </div>
+            </div>
+            <div class="cert-preview">
+                <iframe src="DataCamp_SQL.pdf" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>Presenter Certificate - ACLing 2025</h3>
+                    <p class="cert-meta">AI in Computational Linguistics, British University in Dubai &nbsp;·&nbsp; Dec 7, 2025 &nbsp;·&nbsp; No: ACLing/2025/87</p>
+                </div>
+            </div>
+            <div class="cert-preview">
+                <iframe src="ACLing_2025_Certificate.pdf" loading="lazy"></iframe>
             </div>
         </div>
 
     </section>
 
+
     <footer>
         <p>Last updated: July 2026</p>
     </footer>
 
-    <!-- Lightbox overlay -->
-    <div class="lightbox-overlay" id="certLightbox">
-        <div class="lightbox-box">
-            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-            <iframe id="certFrame" src=""></iframe>
-        </div>
-    </div>
-
-    <script>
-        function openCert(src) {
-            document.getElementById('certFrame').src = src;
-            document.getElementById('certLightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            document.getElementById('certLightbox').classList.remove('active');
-            document.getElementById('certFrame').src = '';
-            document.body.style.overflow = '';
-        }
-        document.getElementById('certLightbox').addEventListener('click', function(e) {
-            if (e.target === this) closeLightbox();
-        });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    </script>
 </body>
 </html>
