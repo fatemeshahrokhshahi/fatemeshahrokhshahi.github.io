@@ -7,10 +7,11 @@
     <style>
         body {
             font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.8;
-            max-width: 900px;
+            font-size: 13.5px;
+            line-height: 1.6;
+            max-width: 860px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 28px 20px;
             color: #2c3e50;
             background-color: #ffffff;
         }
@@ -18,178 +19,185 @@
         header {
             display: flex;
             align-items: center;
-            gap: 36px;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
+            gap: 24px;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
             border-bottom: 1px solid #bdc3c7;
         }
 
-        .header-photo {
-            flex-shrink: 0;
-        }
+        .header-photo { flex-shrink: 0; }
 
         .header-photo img {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #bdc3c7;
+            border: 1px solid #bdc3c7;
             display: block;
         }
 
-        .header-text {
-            flex: 1;
-        }
+        .header-text { flex: 1; }
 
         h1 {
-            font-size: 2.2em;
+            font-size: 1.6em;
             font-weight: 400;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: #1a252f;
         }
 
         .affiliation {
-            font-size: 1.05em;
+            font-size: 0.88em;
             color: #555;
             margin-bottom: 0;
+            line-height: 1.5;
         }
 
-        .contact-links {
-            margin-top: 16px;
-        }
+        .contact-links { margin-top: 10px; }
 
         .contact-links a {
-            margin-right: 16px;
+            margin-right: 12px;
             color: #2c5282;
             text-decoration: none;
-            font-size: 0.95em;
+            font-size: 0.82em;
         }
 
-        .contact-links a:hover {
-            text-decoration: underline;
-        }
+        .contact-links a:hover { text-decoration: underline; }
 
-        section {
-            margin-bottom: 45px;
-        }
+        section { margin-bottom: 28px; }
 
         h2 {
-            font-size: 1.4em;
+            font-size: 1.05em;
             font-weight: 500;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #1a252f;
             border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 8px;
+            padding-bottom: 5px;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
             text-align: justify;
         }
 
         .research-interests {
             font-style: italic;
             color: #555;
-            margin-top: 10px;
+            margin-top: 6px;
+            font-size: 0.9em;
         }
 
         /* Publications */
         .publication {
             background-color: #f8f9fa;
-            padding: 20px;
-            margin: 20px 0;
+            padding: 12px 14px;
+            margin: 10px 0;
             border-left: 3px solid #2c5282;
         }
 
         .publication h3 {
-            font-size: 1.1em;
+            font-size: 0.92em;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             color: #1a252f;
         }
 
         .publication .venue {
             font-style: italic;
             color: #555;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
+            font-size: 0.88em;
         }
 
-        .publication .links {
-            margin-top: 10px;
+        .publication p {
+            font-size: 0.88em;
+            margin-bottom: 4px;
         }
+
+        .publication .links { margin-top: 6px; }
 
         .publication .links a {
             color: #2c5282;
             text-decoration: none;
-            margin-right: 15px;
-            font-size: 0.9em;
+            margin-right: 12px;
+            font-size: 0.85em;
         }
 
-        .publication .links a:hover {
-            text-decoration: underline;
-        }
+        .publication .links a:hover { text-decoration: underline; }
 
         /* Certifications */
         .certification {
             background-color: #f8f9fa;
-            padding: 20px;
-            margin: 20px 0;
+            margin: 10px 0;
             border-left: 3px solid #2c5282;
+            overflow: hidden;
+        }
+
+        .certification-header {
+            padding: 10px 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
+            gap: 12px;
+            cursor: default;
         }
 
         .certification-info h3 {
-            font-size: 1.05em;
+            font-size: 0.92em;
             font-weight: 500;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
             color: #1a252f;
         }
 
         .certification-info .cert-meta {
             font-style: italic;
             color: #555;
-            font-size: 0.92em;
+            font-size: 0.82em;
             margin-bottom: 0;
         }
 
-        .certification-link a {
-            color: #2c5282;
-            text-decoration: none;
-            font-size: 0.9em;
-            white-space: nowrap;
+        .cert-preview {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.3s ease;
+            padding: 0 14px;
         }
 
-        .certification-link a:hover {
-            text-decoration: underline;
+        .certification:hover .cert-preview {
+            max-height: 560px;
+            padding: 0 14px 14px;
+        }
+
+        .cert-preview iframe {
+            width: 100%;
+            height: 460px;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            display: block;
         }
 
         ul {
-            padding-left: 20px;
+            padding-left: 18px;
+            font-size: 0.9em;
         }
 
-        li {
-            margin-bottom: 8px;
-        }
+        li { margin-bottom: 4px; }
 
         footer {
-            margin-top: 60px;
-            padding-top: 20px;
+            margin-top: 36px;
+            padding-top: 14px;
             border-top: 1px solid #bdc3c7;
             text-align: center;
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: #7f8c8d;
         }
 
         @media (max-width: 600px) {
-            body { padding: 20px 15px; }
-            header { flex-direction: column; align-items: flex-start; gap: 20px; }
-            h1 { font-size: 1.8em; }
-            .contact-links a { display: inline-block; margin: 4px 12px 4px 0; }
-            .certification { flex-direction: column; align-items: flex-start; gap: 8px; }
+            body { padding: 16px 14px; }
+            header { flex-direction: column; align-items: flex-start; gap: 14px; }
+            h1 { font-size: 1.3em; }
+            .contact-links a { display: inline-block; margin: 3px 10px 3px 0; }
         }
+
     </style>
 </head>
 <body>
@@ -208,7 +216,7 @@
                 <a href="mailto:fatemehshahrokhshahi@stu.aydin.edu.tr">Email</a>
                 <a href="https://github.com/fatemeshahrokhshahi" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/in/fatemeh-shahrokhshahi-180435219/" target="_blank">LinkedIn</a>
-                <a href="Shahrokhshahi_CV_2026_July.pdf" target="_blank">CV</a>
+                <a href="Shahrokhshahi_CV_2026_Aug.pdf" target="_blank">CV</a>
                 <a href="Research Statement FShahrokhshahi.pdf" target="_blank">Research Statement</a>
                 <a href="Transcript_merged.pdf" target="_blank">Transcript</a>
             </div>
@@ -220,13 +228,13 @@
         <p>
             I am a researcher working on the reliability and trustworthiness of large language models. My work is driven by
             a direct concern: LLMs are now accessible to everyone, yet their reasoning failures remain poorly understood and
-            difficult to anticipate. I believe technology should genuinely help people - and that is only possible when the
+            difficult to anticipate. I believe technology should genuinely help people, and that is only possible when the
             systems they rely on are transparent about what they can and cannot do.
         </p>
         <p>
             My research focuses on understanding why LLMs fail on logical inference, predicting when they will fail, and
             designing interventions that make their behaviour more consistent and interpretable. Reliable, transparent AI
-            is not a secondary concern - it is the foundation everything else has to be built on.
+            is not a secondary concern, it is the foundation everything else has to be built on.
         </p>
         <p class="research-interests">
             <strong>Research Interests:</strong> Large Language Models, Logical Reasoning, Modal Logic, Failure Prediction,
@@ -261,7 +269,7 @@
             <h3>Towards Logical Reasoning by Design: Encoding Inference Rules in MeMo's Associative Memory</h3>
             <p class="venue">
                 MeMo Workshop on Mechanistic Interpretability &amp; Neuro-symbolic Approaches<br>
-                University of Rome Tor Vergata &nbsp;·&nbsp; Accepted and Presented June 2026 &nbsp;·&nbsp
+                University of Rome Tor Vergata &nbsp;·&nbsp; Accepted, June 2026 &nbsp;·&nbsp; Forthcoming in CEUR &amp; arXiv
             </p>
             <p>F. Shahrokhshahi</p>
             <p>
@@ -324,63 +332,76 @@
         </p>
     </section>
 
+
     <section>
         <h2>Certifications</h2>
 
         <div class="certification">
-            <div class="certification-info">
-                <h3>French Language - A2 Level</h3>
-                <p class="cert-meta">Istanbul Aydin University, Département des Langues Étrangères &nbsp;·&nbsp; 2025</p>
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>French Language - A2 Level</h3>
+                    <p class="cert-meta">Istanbul Aydin University, Département des Langues Étrangères &nbsp;·&nbsp; 2025</p>
+                </div>
             </div>
-            <div class="certification-link">
-                <a href="French_A2_Certificate.pdf" target="_blank">[View Certificate]</a>
-            </div>
-        </div>
-
-        <div class="certification">
-            <div class="certification-info">
-                <h3>IELTS Academic</h3>
-                <p class="cert-meta">Overall: 7.0 &nbsp;(L:8, R:7, S:7, W:6) &nbsp;·&nbsp; Oct 2022 &nbsp;·&nbsp; TRF 22IR007446SHAF010A</p>
-            </div>
-            <div class="certification-link">
-                <a href="IELTS_Certificate.pdf" target="_blank">[View Certificate]</a>
+            <div class="cert-preview">
+                <iframe src="French_A2_Certificate.pdf" loading="lazy"></iframe>
             </div>
         </div>
 
         <div class="certification">
-            <div class="certification-info">
-                <h3>AI Fundamentals Certification</h3>
-                <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 10, 2024 &nbsp;·&nbsp; No: AIF0029382573652</p>
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>IELTS Academic</h3>
+                    <p class="cert-meta">Overall: 7.0 &nbsp;(L:8, R:7, S:7, W:6) &nbsp;·&nbsp; Oct 2022 &nbsp;·&nbsp; TRF 22IR007446SHAF010A</p>
+                </div>
             </div>
-            <div class="certification-link">
-                <a href="DataCamp_AI_Fundamentals.pdf" target="_blank">[View Certificate]</a>
-            </div>
-        </div>
-
-        <div class="certification">
-            <div class="certification-info">
-                <h3>Introduction to SQL</h3>
-                <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 9, 2024 &nbsp;·&nbsp; No: 36,777,634</p>
-            </div>
-            <div class="certification-link">
-                <a href="DataCamp_SQL.pdf" target="_blank">[View Certificate]</a>
+            <div class="cert-preview">
+                <iframe src="IELTS.pdf" loading="lazy"></iframe>
             </div>
         </div>
 
         <div class="certification">
-            <div class="certification-info">
-                <h3>Presenter Certificate - ACLing 2025</h3>
-                <p class="cert-meta">AI in Computational Linguistics, British University in Dubai &nbsp;·&nbsp; Dec 7, 2025 &nbsp;·&nbsp; No: ACLing/2025/87</p>
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>AI Fundamentals Certification</h3>
+                    <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 10, 2024 &nbsp;·&nbsp; No: AIF0029382573652</p>
+                </div>
             </div>
-            <div class="certification-link">
-                <a href="ACLing_2025_Certificate.pdf" target="_blank">[View Certificate]</a>
+            <div class="cert-preview">
+                <iframe src="DataCamp_AI_Fundamentals.pdf" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>Introduction to SQL</h3>
+                    <p class="cert-meta">DataCamp &nbsp;·&nbsp; Nov 9, 2024 &nbsp;·&nbsp; No: 36,777,634</p>
+                </div>
+            </div>
+            <div class="cert-preview">
+                <iframe src="DataCamp_SQL.pdf" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <div class="certification">
+            <div class="certification-header">
+                <div class="certification-info">
+                    <h3>Presenter Certificate - ACLing 2025</h3>
+                    <p class="cert-meta">AI in Computational Linguistics, British University in Dubai &nbsp;·&nbsp; Dec 7, 2025 &nbsp;·&nbsp; No: ACLing/2025/87</p>
+                </div>
+            </div>
+            <div class="cert-preview">
+                <iframe src="ACLing_2025_Certificate.pdf" loading="lazy"></iframe>
             </div>
         </div>
 
     </section>
 
+
     <footer>
-        <p>Last updated: July 2026</p>
+        <p>Last updated: Aug 2026</p>
     </footer>
+
 </body>
 </html>
